@@ -308,7 +308,7 @@ as specified by the volume envelope and filter envelope **/
         wad.gain[0].gain.linearRampToValueAtTime(wad.volume * wad.env.sustain, arg.exactTime + wad.env.attack + wad.env.decay + 0.00002);
         wad.gain[0].gain.linearRampToValueAtTime(wad.volume * wad.env.sustain, arg.exactTime + wad.env.attack + wad.env.decay + wad.env.hold + 0.00003);
         wad.gain[0].gain.linearRampToValueAtTime(0.0001, arg.exactTime + wad.env.attack + wad.env.decay + wad.env.hold + wad.env.release + 0.00004);
-        wad.soundSource.start(arg.exactTime);
+        wad.soundSource.start(arg.exactTime, arg.offset || 0);
         wad.soundSource.stop(arg.exactTime + wad.env.attack + wad.env.decay + wad.env.hold + wad.env.release);
     };
 
